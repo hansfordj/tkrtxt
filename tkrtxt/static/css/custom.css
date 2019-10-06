@@ -1,0 +1,62 @@
+textarea {
+    width:50%;
+    resize:vertical;
+    max-height:250px;
+    min-height:100px;
+}
+
+body {
+  margin: 40px;
+  background-color:aliceblue;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+  position: relative;
+}
+
+.header {
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.wrapper {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-areas:
+    "header  header  header"
+    "sidebar content content"
+    "footer  footer  footer";
+}
+
+.box {
+  border-radius: 5px;
+  padding: 50px;
+  font-size: 150%;
+}
+
+.header,
+.footer {
+  background-color: #999;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.bottomright {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{ user.username }}'s Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+  <style>
+  .border {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    margin: 10px;
+  }
+  </style>
+</head>
+
+<body>
+{% include 'includes/_navbar.html' %}
+
+
+<div class="container">
+
+</div>
+  <div class="container-fluid text-center">
+
+<!-- Profile View -->
+
+  <div class="row">
+
+    <div class="col-3 ">
+
+	   <p><span class="border border-dark"><img src="{{ user.avatar(128) }}" ></span></p>
+     
+     {% if user == current_user %}
+	   <p><a href="{{ url_for('edit_profile') }}">Edit Profile: <small> {{ user.username }}</small></a></p>
+     
+     {% else %}
+	   <p>Profile: <small> {{ user.username }}</small></p>
+	   {% endif %}
+
+	   <p>
+        <div class="well">
+              <span class="badge badge-primary">Trial</span>
+              <span class="badge badge-secondary">Upgrade</span>
+        </div>
+      </p>
+    </div>
+    
+
+    <div class="col-7 ">
+    <p>
+    <div class="panel-body text-left">
+              {% if user.about_me  %}<pre>{{ user.about_me }}</pre>{% endif %}
+              {% if user.last_seen  %}<p>Last seen on: {{ user.last_seen }}</p>{% endif %}
+
+          {% if user == current_user %}
+                <a href="{{ url_for('edit_profile') }}"class="badge badge-primary">
+                  Edit Profile
+                </a>
+
+           {% endif %}
+
+
+	  <div class="row">
+        <div class="col-2">
+
+   
+
+        </div>
+
+        <div class="col">
+
+		 
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2 ">
+
+	</div>
+  </div>
+</div>
+</body>
+
+</html>

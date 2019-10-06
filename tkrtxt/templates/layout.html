@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="TkrTxt: SMS Crypto Quotes.">
+  <meta name="keywords" content="Monero,Crypto,Python">
+  <meta name="author" content="CryptoDevGod">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon-32x32.png') }}" >
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="{{ url_for('static', filename='assets/js/vendor/popper.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+  
+  <title>TkrTxt Cyrpto Quotes</title> 
+    <!-- Bootstrap core CSS -->
+    
+</head>
+
+  <body>
+  {% include 'includes/_navbar.html' %}
+
+    <div class="container">
+    {% include 'includes/_messages.html' %}
+    </div>
+
+  {% block body %}{% endblock %}
+  {% include 'includes/_footer.html' %}
+  </body> 
+  
+  
+</html>
+
+

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div align="center">
+<h1>Donations Appreciated!</h1>
+<p>If you like what you see and would like to contribute financially (and anonymously!), donate XMR to:</p>
+<p>
+<object type="image/svg+xml" data="static/images/qr/donate_addr_qr.svg" height="500px" width="500px">
+  Your browser does not support SVG
+</object>
+</p>
+<script src="static/js/copytoclip.js"></script>
+<p id="p1"><font style="font-size:0px">8AcQ7S9BxNFhkgAGnZU3Ui8fu8NzaXJbpNGsKkoavGVW81bqdjmwy1kHJQ2zPwpLUDHMCuLWuj93UXb2kwEGFakJA8GgmeQ</font></p>
+<button type="button" class="btn btn-primary active" onclick="copyToClipboard('#p1')">Click To Copy XMR Donate Address</button>
+
+</div>
+{% endblock %}

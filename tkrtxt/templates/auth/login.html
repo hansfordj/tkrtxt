@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+
+
+
+<div class="row">
+ <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+  <p>
+  <form class="form-signin", action='' method = 'POST'>
+<div style="text-align: center;">
+<h1 class="h3 mb-3 font-weight-normal text-center"> <img class="img-fluid" src="{{ url_for('static', filename='images/monero_symbol_small.png') }}" alt="" width="72" height="72">Please sign in</h1>
+
+
+
+
+
+  {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}<br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+        <p>Forgot Your Password?<a href="{{ url_for('auth.reset_password_request') }}">Click to Reset It</a></p>
+        <p>{{ form.submit() }}</p>
+    </form>
+  </p>
+  </div></div>
+  <div class="col-sm-4">  </div>
+ 
+</div>
+<p> </p>
+{% endblock %}
+    
